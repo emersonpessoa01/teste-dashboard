@@ -53,4 +53,9 @@ body {
   overflow-y: auto;
   /* max-height: 100vh; */
 }
+@media (max-width: 480px) {
+  html{
+    font-size: 80%;
+  }
+}
 
