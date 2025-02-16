@@ -49,3 +49,8 @@ body {
 .text-primary {
   color: var(--primary);
 }
+#sidebar {
+  overflow-y: auto;
+  /* max-height: 100vh; */
+}
+

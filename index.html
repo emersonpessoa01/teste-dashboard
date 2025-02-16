@@ -42,16 +42,16 @@
     </script>
   </head>
   <body class="bg-gray-100 font-sans">
-    <div class="flex h-screen sm:max-h-screen mx-auto max-h-screen" >
+    <div class="flex h-auto min-h-screen">
       <!-- Botão do menu no modo tablet -->
       <button id="menu-btn" class="md:hidden absolute top-4 left-4 text-gray-700 text-2xl" onclick="toggleSidebar()">☰</button>
 
       <!-- Sidebar fixo à esquerda -->
       <aside
         id="sidebar"
-        class="w-64 bg-purple-900 text-white flex flex-col p-6 fixed h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300"
+        class="w-64 bg-purple-900 text-white flex flex-col p-6 fixed h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out min-h-screen"
       >
-        <div class="mb-8 flex justify-between items-center">
+        <div class="mb-8 flex justify-between items-center min-h-0 h-auto">
           <div class="flex items-center justify-center mr-2">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="mr-2">
               <path d="M20 5L30 15L20 25L10 15L20 5Z" stroke="var(--secondary)" strokeWidth="2" />
@@ -62,7 +62,7 @@
           <!-- Botão de fechar no modo tablet -->
           <button class="md:hidden text-white text-xl" onclick="toggleSidebar()">✖</button>
         </div>
-        <nav class="flex-1 space-y-2">
+        <nav class="flex-1 space-y-2 h-auto">
           <a href="#" class="flex items-center bg-secondary p-3 rounded-lg text-primary ">
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
@@ -76,7 +76,7 @@
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
-        <div class="mt-auto">
+        <div class="mt-auto min-h-0 h-auto">
           <a href="#" class="flex items-center text-red-400"> <span class="mr-2">↩️</span> Log out </a>
           <div class="flex items-center mt-4">
             <img src="https://via.placeholder.com/40" alt="Perfil" class="w-10 h-10 rounded-full" />
@@ -89,7 +89,7 @@
       </aside>
 
       <!-- Conteúdo principal -->
-      <div class="flex-1 flex flex-col md:ml-64">
+      <div class="flex-1 flex flex-col h-auto md:ml-64">
         <!-- Header -->
         <header class="bg-white shadow px-6 py-4 flex justify-between items-center md:flex-row flex-col gap-4">
           <!-- Título "Monitorando" -->
@@ -107,9 +107,9 @@
         </header>
 
         <!-- Conteúdo Principal -->
-        <div class="content flex-1 flex flex-col p-6 lg:p-10 space-y-6 lg:space-y-0 lg:space-x-6 lg:flex-row">
+        <div class="content flex-1 flex h-auto flex-col p-6 lg:p-10 space-y-6 lg:space-y-0 lg:space-x-6 lg:flex-row">
           <!-- Empresas Cadastradas -->
-          <section class="flex-1 bg-white rounded shadow p-6">
+          <section class="flex-1 h-auto bg-white rounded shadow p-6">
             <h2 class="text-xl font-bold mb-6">Empresas cadastradas</h2>
             <div class="flex items-center mb-4">
               <input type="text" class="border w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="Buscar empresa" />
@@ -134,7 +134,7 @@
           </section>
 
           <!-- Detalhes da Empresa -->
-          <section class="flex-1 bg-white rounded shadow p-6">
+          <section class="flex-1 h-auto bg-white rounded shadow p-6">
             <h2 class="text-xl font-bold mb-6">Detalhes</h2>
             <div class="text-sm mb-4">
               <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
