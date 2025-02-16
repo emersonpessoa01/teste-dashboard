@@ -1,17 +1,50 @@
 :root {
-    --primary: #6d28d9; /* Purple */
-    --secondary: #10b981; /* Green */
-    --dark: #1f2937;
-    --light: #f3f4f6;
-    --light-gray: #37404d;
-  }
-  
-.bg-purple-900{
-    background-color: #2d1b4d;
+  --primary: #6d28d9; /* Purple */
+  --secondary: #10b981; /* Green */
+  --dark: #1f2937;
+  --light: #f3f4f6;
+  --light-gray: #37404d;
 }
-.bg-secondary{
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+  width: 1.2rem;
+  height: 0.25rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: inset 0 0 5px #a5aaad;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #6d28d9; /* Purple */
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #10b981; /* Purple */
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+.bg-purple-900 {
+  background-color: #2d1b4d;
+}
+.bg-secondary {
   background: var(--secondary);
 }
-.text-primary{
+.text-primary {
   color: var(--primary);
 }
