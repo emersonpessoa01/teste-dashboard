@@ -16,6 +16,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 5rem;
+  font-size: 100%;
 }
 html::-webkit-scrollbar {
   width: 1.2rem;
@@ -34,11 +35,10 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-thumb:hover {
   background: #10b981; /* Purple */
 }
-@media (max-width: 480px) {
-  html {
-    font-size: 62.5%;
-  }
+body {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
+
 .bg-purple-900 {
   background-color: #2d1b4d;
 }
