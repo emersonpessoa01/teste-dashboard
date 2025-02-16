@@ -63,16 +63,16 @@
           <button class="md:hidden text-white text-xl" onclick="toggleSidebar()">✖</button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
-          <a href="#" class="flex items-center bg-secondary p-3 rounded-lg text-primary ">
+          <a href="#" class="flex items-center bg-secondary p-3 rounded-lg text-white">
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] transition duration-600" >
+          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600" >
             <span class="mr-8"><img src="./image/company.png" alt="Company Icon" class="w-[23px]" /></span> Empresas
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] transition duration-600">
+          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/report.png" alt="Report Icon" class="w-[23px]" /></span> Relatórios
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] transition duration-600">
+          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
@@ -93,16 +93,16 @@
         <!-- Header -->
         <header class="bg-white shadow px-6 py-4 flex justify-between items-center md:flex-row flex-col gap-4">
           <!-- Título "Monitorando" -->
-          <div class="text-sm flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg">
+          <div class="text-sm flex items-center space-x-2 px-4 py-2 rounded-lg">
             <span>🖥️</span>
             <span>Monitorando:</span>
-            <span class="font-bold">27 eventos encontrados</span>
+            <span class="font-bold bg-gray-100 px-4 py-2 rounded-lg">27 eventos encontrados</span>
           </div>
 
           <!-- Barra de busca e data -->
-          <div class="flex items-center w-full md:w-auto justify-between md:flex-wrap flex-col">
+          <div class="grid grid-cols-1 w-full md:w-auto justify-between lg:grid-cols-2 gap-4">
             <input type="text" class="border rounded-lg px-3 py-2 text-sm flex-1 h-auto md:flex-wrap w-full" placeholder="Buscar" />
-            <span class="flex px-3 py-3 text-gray-500 text-sm md:flex-wrap w-full">Segunda, 10 de Fevereiro</span>
+            <span class="px-3 py-3 text-gray-500 text-sm">Segunda, 10 de Fevereiro</span>
           </div>
         </header>
 
