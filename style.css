@@ -51,7 +51,7 @@ body {
 }
 #sidebar {
   overflow-y: auto;
-  /* max-height: 100vh; */
+  max-height: 100vh;
 }
 @media (max-width: 480px) {
   html{

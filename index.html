@@ -14,10 +14,10 @@
         // Adiciona ou remove o evento de fechar ao clicar fora
         if (!sidebar.classList.contains("-translate-x-full")) {
           document.addEventListener("click", closeOnClickOutside);
-          document.addEventListener("scroll", closeOnScroll);
+          // document.addEventListener("scroll", closeOnScroll);
         } else {
           document.removeEventListener("click", closeOnClickOutside);
-          document.removeEventListener("scroll", closeOnScroll);
+          // document.removeEventListener("scroll", closeOnScroll);
         }
       }
 
@@ -37,7 +37,7 @@
 
       function removeCloseEvents() {
         document.removeEventListener("click", closeOnClickOutside);
-        document.removeEventListener("scroll", closeOnScroll);
+        // document.removeEventListener("scroll", closeOnScroll);
       }
     </script>
   </head>
@@ -49,7 +49,7 @@
       <!-- Sidebar fixo à esquerda -->
       <aside
         id="sidebar"
-        class="w-64 bg-purple-900 text-white flex flex-col p-6 fixed h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out min-h-screen"
+        class="w-64 bg-purple-900 text-white flex flex-col p-6 fixed transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out min-h-screen"
       >
         <div class="mb-8 flex justify-between items-center min-h-0 h-auto">
           <div class="flex items-center justify-center mr-2">
