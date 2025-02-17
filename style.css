@@ -1,6 +1,7 @@
 :root {
-  --primary: #6d28d9; /* Purple */
+  --primary: #6D28D9; /* Purple */
   --secondary: #10b981; /* Green */
+  --sidebar: #2D1B4D; /* Purple */
   --dark: #1f2937;
   --light: #f3f4f6;
   --light-gray: #37404d;
@@ -45,6 +46,9 @@ body {
 }
 .bg-secondary {
   background: var(--secondary);
+}
+.bg-sidebar {
+  background: var(--sidebar);
 }
 .text-primary {
   color: var(--primary);
