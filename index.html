@@ -11,13 +11,10 @@
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("-translate-x-full");
 
-        // Adiciona ou remove o evento de fechar ao clicar fora
         if (!sidebar.classList.contains("-translate-x-full")) {
           document.addEventListener("click", closeOnClickOutside);
-          // document.addEventListener("scroll", closeOnScroll);
         } else {
           document.removeEventListener("click", closeOnClickOutside);
-          // document.removeEventListener("scroll", closeOnScroll);
         }
       }
 
@@ -26,19 +23,22 @@
         const toggleButton = document.getElementById("menu-btn");
         if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
           sidebar.classList.add("-translate-x-full");
-          removeCloseEvents();
+          document.removeEventListener("click", closeOnClickOutside);
         }
       }
 
-      function closeOnScroll() {
-        document.getElementById("sidebar").classList.add("-translate-x-full");
-        removeCloseEvents();
+      function updateBreadcrumb(text) {
+        document.getElementById("breadcrumb-main").textContent = text;
       }
 
-      function removeCloseEvents() {
-        document.removeEventListener("click", closeOnClickOutside);
-        // document.removeEventListener("scroll", closeOnScroll);
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".sidebar-link").forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            updateBreadcrumb(this.textContent.trim());
+          });
+        });
+      });
     </script>
   </head>
   <body class="bg-gray-100 font-sans">
@@ -63,21 +63,23 @@
           <button class="md:hidden text-white text-xl" onclick="toggleSidebar()">✖</button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
-          <a href="#" class="flex items-center bg-secondary p-3 rounded-lg text-white">
+          <a href="#" class="sidebar-link flex items-center bg-secondary p-3 rounded-lg text-white">
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600" >
+          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/company.png" alt="Company Icon" class="w-[23px]" /></span> Empresas
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/report.png" alt="Report Icon" class="w-[23px]" /></span> Relatórios
           </a>
-          <a href="#" class="flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
         <div class="mt-auto min-h-0 h-auto">
-          <a href="#" class="flex items-center text-primary hover:text-white transition duration-600 ease-in-out"> <span class="mr-2"><img src="./image/Logout.png" alt="Logout Icon" class="w-[23px]"></span> Log out </a>
+          <a href="#" class="flex items-center text-primary hover:text-white transition duration-600 ease-in-out">
+            <span class="mr-2"><img src="./image/Logout.png" alt="Logout Icon" class="w-[23px]" /></span> Log out
+          </a>
           <div class="flex items-center mt-4">
             <img src="./image/profile.png" alt="Profile Icon" class="w-10 h-10 rounded-full" />
             <div class="ml-3">
@@ -92,9 +94,15 @@
       <div class="flex-1 flex flex-col h-auto md:ml-64">
         <!-- Header -->
         <header class="bg-white shadow px-6 py-4 flex justify-between items-center md:flex-row flex-col gap-4">
+          <!-- Mostrano os links de navegação -->
+          <div class="flex items-center space-x-2">
+            <a href="#" class="text-gray-500">Home</a>
+            <span class="text-gray-400">></span>
+            <span id="breadcrumb-main" class="font-bold">Dashboard</span>
+          </div>
           <!-- Título "Monitorando" -->
           <div class="text-sm flex items-center space-x-2 px-4 py-2 rounded-lg">
-            <span><img src="./image/monitor.png" alt="Monitor Icon" class="w-[23px]"></span>
+            <span><img src="./image/monitor.png" alt="Monitor Icon" class="w-[23px]" /></span>
             <span>Monitorando:</span>
             <span class="font-bold bg-gray-100 px-4 py-2 rounded-lg">27 eventos encontrados</span>
           </div>
