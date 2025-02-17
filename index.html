@@ -62,6 +62,22 @@
           });
         });
       });
+      //Adicionar data atual: dia da semana, dia do mês e mês
+      function updateDate() {
+        const dateElement = document.getElementById("current-date");
+        const options = { weekday: "long", day: "2-digit", month: "long" };
+        let currentDate = new Date().toLocaleDateString("pt-BR", options);
+
+        // Deixa a primeira letra do dia da semana e do mês maiúsculas
+        currentDate = currentDate.replace(/(^\w{1})|(\s\w{1})/g, (match) => match.toUpperCase());
+
+        // Ajusta a formatação removendo a vírgula padrão e colocando onde queremos
+        currentDate = currentDate.replace(" De ", " de ");
+
+        dateElement.textContent = currentDate;
+      }
+
+      document.addEventListener("DOMContentLoaded", updateDate);
     </script>
   </head>
   <body class="bg-gray-100 font-sans">
@@ -135,7 +151,7 @@
           <!-- Barra de busca e data -->
           <div class="grid grid-cols-1 w-full md:w-auto justify-between lg:grid-cols-2 gap-4">
             <input type="text" class="border rounded-lg px-3 py-2 text-sm flex-1 h-auto md:flex-wrap w-full" placeholder="Buscar" />
-            <span class="px-3 py-3 text-gray-500 text-sm">Segunda, 10 de Fevereiro</span>
+            <span id="current-date" class="px-3 py-3 text-gray-500 text-sm"></span>
           </div>
         </header>
 
@@ -145,12 +161,12 @@
           <section class="flex-1 bg-white rounded shadow p-6">
             <h2 class="text-xl font-bold mb-6">Empresas cadastradas</h2>
             <div class="flex items-center mb-4">
-              <input type="text" class="border w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="Buscar empresa" />
-              <button class="bg-green-500 text-white px-4 py-2 ml-2 rounded-lg text-sm">Cadastrar</button>
+              <input type="text" class="border w-full rounded-[5px] px-3 py-2 text-sm focus:outline-none" placeholder="Buscar empresa" />
+              <button class="bg-green-500 text-white px-4 py-2 ml-2 rounded-[5px] text-sm">Cadastrar</button>
             </div>
             <div class="flex mb-4 space-x-4">
-              <button class="bg-gray-200 px-4 py-2 rounded-lg text-sm">Ativas</button>
-              <button class="bg-gray-200 px-4 py-2 rounded-lg text-sm">Inativas</button>
+              <button class="bg-gray-200 px-4 py-2 rounded-[5px] text-sm">Ativas</button>
+              <button class="bg-gray-200 px-4 py-2 rounded-[5px] text-sm">Inativas</button>
             </div>
             <ul class="divide-y">
               <li class="py-4 flex justify-between items-center">
