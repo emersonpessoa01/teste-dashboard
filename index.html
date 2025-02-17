@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciamento de Empresas</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       function toggleSidebar() {
@@ -75,7 +83,9 @@
             <span className="text-2xl md:text-2xl font-black">SecureFlow</span>
           </div>
           <!-- Botão de fechar no modo tablet -->
-          <button class="text-white md:hidden text-xl" onclick="toggleSidebar()">✖</button>
+          <button class="text-white md:hidden text-xl" onclick="toggleSidebar()" title="Close Sidebar">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
           <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
