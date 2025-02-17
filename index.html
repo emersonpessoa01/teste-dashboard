@@ -32,9 +32,24 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".sidebar-link").forEach((link) => {
+        const links = document.querySelectorAll(".sidebar-link");
+
+        // Define o primeiro link (Dashboard) como ativo por padrão
+        if (links.length > 0) {
+          links[0].classList.add("bg-[#10b981]", "text-white");
+        }
+
+        links.forEach((link) => {
           link.addEventListener("click", function (event) {
             event.preventDefault();
+
+            // Remove a classe 'active' de todos os links
+            links.forEach((l) => l.classList.remove("bg-[#10b981]", "text-white"));
+
+            // Adiciona a classe 'active' ao link clicado
+            this.classList.add("bg-[#10b981]", "text-white");
+
+            // Atualiza o breadcrumb
             updateBreadcrumb(this.textContent.trim());
           });
         });
@@ -63,7 +78,7 @@
           <button class="md:hidden text-white text-xl" onclick="toggleSidebar()">✖</button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
-          <a href="#" class="sidebar-link flex items-center bg-secondary p-3 rounded-lg text-white">
+          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
           <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
@@ -98,7 +113,7 @@
           <div class="flex items-center space-x-2">
             <a href="#" class="text-gray-500">Home</a>
             <span class="text-gray-400">></span>
-            <span id="breadcrumb-main" class="font-bold">Dashboard</span>
+            <span id="breadcrumb-main" class="text-gray-600">Dashboard</span>
           </div>
           <!-- Título "Monitorando" -->
           <div class="text-sm flex items-center space-x-2 px-4 py-2 rounded-lg">
