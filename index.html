@@ -170,7 +170,7 @@
             <div class="text-sm flex items-center space-x-2 py-2 rounded-lg">
               <span><img src="./image/monitor.png" alt="Monitor Icon" class="space-x-2 w-[23px]" /></span>
               <span class="mx-4">Monitorando:</span>
-              <span class="mx-4 font-bold bg-gray-100 px-4 py-2 rounded-lg">27 eventos encontrados</span>
+              <span class="mx-4 text-gray-700 bg-gray-100 px-4 py-2 rounded-lg">27 eventos encontrados</span>
             </div>
           </div>
 
@@ -178,7 +178,7 @@
           <div class="relative w-full lg:w-auto">
             <input
               type="text"
-              class="border rounded-lg pr-10 pl-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-green-500"
+              class="border rounded-[5px] pr-10 pl-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-green-500"
               placeholder="Buscar"
             />
             <div class="absolute inset-y-0 right-3 flex items-center">
@@ -193,16 +193,24 @@
           <!-- Empresas Cadastradas -->
           <section class="flex-1 bg-white rounded shadow p-6">
             <h2 class="text-xl font-bold mb-6">Empresas cadastradas</h2>
-            <div class="flex items-center mb-4">
-              <input type="text" class="border w-full rounded-[5px] px-3 py-2 text-sm focus:outline-none" placeholder="Buscar empresa" />
-              <button class="bg-green-500 text-white px-4 py-2 ml-2 rounded-[5px] text-sm">Cadastrar</button>
+            <div class="relative flex items-center mb-4">
+              <input
+                type="text"
+                class="border rounded-[5px] pr-10 pl-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-green-500"
+                placeholder="Buscar empresa"
+              />
+              <div class="box-icon absolute inset-y-0 right-3 flex items-center">
+                <i class="fas fa-search text-gray-400"></i>
+              </div>
+              <button class="bg-secondary text-white px-4 py-2 ml-2 rounded-[5px] text-sm">Cadastrar</button>
             </div>
+
             <div class="bg-gray-200 flex mb-4 space-x-4 p-1 rounded-[5px]">
               <button class="shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1)] bg-white px-4 py-2 rounded-[5px] text-sm w-full">Ativas</button>
               <button class="bg-gray-200 px-4 py-2 rounded-[5px] text-sm w-full">Inativas</button>
             </div>
             <ul class="divide-y">
-              <li class="py-4 px-4 flex items-center justify-between bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.3)] rounded-lg">
+              <li class="py-4 px-4 flex items-center justify-between bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.3)] rounded-[5px]">
                 <!-- Avatar e informações -->
                 <div class="flex items-center space-x-4">
                   <div class="w-10 h-10 bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">

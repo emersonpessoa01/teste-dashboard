@@ -53,6 +53,9 @@ body {
 .text-primary {
   color: var(--primary);
 }
+.box-icon{
+  padding-right: 6.75rem;
+}
 #sidebar {
   overflow-y: auto;
   max-height: 100vh;
