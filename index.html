@@ -101,14 +101,14 @@
     </script>
   </head>
   <body class="bg-gray-100 font-sans">
-    <div class="flex h-auto min-h-screen w-full overflow:hidden">
+    <div class="flex flex-col h-auto min-h-screen sm:flex-row">
       <!-- Botão do menu no modo tablet -->
-      <button id="menu-btn" class="md:hidden absolute top-4 left-4 text-gray-700 text-2xl" onclick="toggleSidebar()">☰</button>
+      <button id="menu-btn" class="lg:hidden absolute top-4 left-4 text-gray-700 text-2xl" onclick="toggleSidebar()">☰</button>
 
       <!-- Sidebar fixo à esquerda -->
       <aside
         id="sidebar"
-        class="absolute z-20 w-64 bg-sidebar text-white flex flex-col p-6 fixed transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out h-screen overflow-y-auto"
+        class="absolute z-20 w-64 bg-sidebar text-white flex flex-col p-6 fixed transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out min-h-screen"
       >
         <div class="mb-8 flex justify-between items-center min-h-0 h-auto">
           <div class="flex items-center justify-center mr-2">
@@ -152,7 +152,7 @@
       </aside>
 
       <!-- Conteúdo principal -->
-      <div class="flex-1 flex flex-col h-auto md:ml-64">
+      <div class="flex-1 flex flex-col h-auto lg:ml-64">
         <!-- Header -->
         <header class="bg-white shadow px-6 py-4 flex justify-between items-center lg:flex-row flex-col gap-4">
           <!-- Mostrano os links de navegação -->
@@ -160,12 +160,14 @@
             <div class="flex items-center space-x-2">
               <a href="#" class="text-gray-500">Home</a>
               <span class="text-gray-400">></span>
-              <span id="breadcrumb-main" class="text-gray-600 font-medium w-[120px] overflow-hidden text-ellipsis whitespace-nowrap inline-block"
+              <span
+                id="breadcrumb-main"
+                class="text-gray-600 font-medium w-[120px] overflow-hidden text-ellipsis whitespace-nowrap text-center inline-block"
                 >Dashboard</span
               >
             </div>
             <!-- Título "Monitorando" -->
-            <div class="text-sm flex items-center space-x-2 py-2 rounded-lg">
+            <div class="text-sm flex flex-col items-center space-x-2 py-2 rounded-lg md:flex-row">
               <span><img src="./image/monitor.png" alt="Monitor Icon" class="space-x-2 w-[23px]" /></span>
               <span class="mx-4">Monitorando:</span>
               <span class="mx-4 text-gray-700 bg-gray-100 px-4 py-2 rounded-lg">27 eventos encontrados</span>
@@ -173,17 +175,17 @@
           </div>
 
           <!-- Barra de busca e data -->
-          <div class="relative flex items-center">
+          <div class="relative w-full lg:w-auto">
             <input
               type="text"
-              class="border rounded-[5px] pr-10 pl-3 py-2 text-sm w-[200px] focus:outline-none focus:ring-1 focus:ring-green-500"
+              class="border rounded-[5px] pr-10 pl-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-green-500"
               placeholder="Buscar"
             />
-            <div class=" absolute inset-y-0 right-60 flex items-center">
+            <div class="absolute inset-y-0 right-3 flex items-center">
               <i class="fas fa-search text-gray-400"></i>
             </div>
-            <span id="current-date" class="ml-4 px-3 py-3 text-gray-500 text-sm whitespace-nowrap"></span>
           </div>
+          <span id="current-date" class="px-3 py-3 text-gray-500 text-sm w-full lg:w-auto"></span>
         </header>
 
         <!-- Conteúdo Principal -->
@@ -207,8 +209,10 @@
               <button class="shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1)] bg-white px-4 py-2 rounded-[5px] text-sm w-full">Ativas</button>
               <button class="bg-gray-200 px-4 py-2 rounded-[5px] text-sm w-full">Inativas</button>
             </div>
-            <ul class="divide-y">
-              <li class="py-4 px-4 flex items-center justify-between bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.3)] rounded-[5px]">
+            <ul class="divide-y flex flex-col gap-2">
+              <li
+                class="py-4 px-4 flex flex-col items-center justify-between bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.3)] rounded-[5px] md:flex-row"
+              >
                 <!-- Avatar e informações -->
                 <div class="flex items-center space-x-4">
                   <div class="w-10 h-10 bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">
@@ -222,7 +226,7 @@
                 </div>
 
                 <!-- ID -->
-                <div class="text-sm text-gray-500 flex flex-col items-end">
+                <div class="text-sm text-gray-500 flex flex-col items-center md:items-end">
                   <span class="mb-2">ID</span>
                   <!-- Botões -->
                   <div class="flex space-x-2">
@@ -236,15 +240,44 @@
 
           <!-- Detalhes da Empresa -->
           <section class="flex-1 bg-white rounded shadow p-6">
+            <!-- Título -->
             <h2 class="text-xl font-bold mb-6">Detalhes</h2>
-            <div class="text-sm mb-4">
-              <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
-              <p><strong>Email:</strong> xx@xxx.com</p>
-              <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
-              <p><strong>Status:</strong> Ativa</p>
-              <p><strong>Data de cadastro:</strong> 00/00/0000</p>
+
+            <!-- Estrutura Principal -->
+            <div class="flex items-center justify-between mb-6">
+              <!-- Avatar e informações -->
+              <div class="flex items-center">
+                <!-- Avatar -->
+                <div class="w-16 h-16 bg-gray-300 rounded-full flex-shrink-0 mr-4"></div>
+                <!-- Informações -->
+                <div>
+                  <p class="text-lg font-semibold text-gray-800">Nome da empresa</p>
+                  <p class="text-sm text-gray-500">Status</p>
+                </div>
+              </div>
+              <!-- ID -->
+              <p class="text-lg font-medium text-gray-500 flex-shrink-0">ID</p>
             </div>
-            <h3 class="text-lg font-bold mb-2">Histórico e Auditoria</h3>
+
+            <!-- Linha Divisória -->
+            <!-- <hr class="border-gray-200 mb-6" /> -->
+
+            <!-- Dados Detalhados -->
+            <div class="grid grid-cols grid xl:grid-cols-3 custom-border pb-5 gap-x-8 gap-y-4 text-sm">
+              <div>
+                <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+                <p><strong>Endereço:</strong> 00/00/0000</p>
+              </div>
+              <div>
+                <p><strong>E-mail:</strong> xx@xxx.com</p>
+                <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+              </div>
+              <div>
+                <p><strong>Status:</strong> Ativa</p>
+                <p><strong>Data de cadastro:</strong> 00/00/0000</p>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold mb-2 pt-5">Histórico e Auditoria</h3>
             <table class="w-full text-sm border-collapse">
               <thead class="bg-gray-100">
                 <tr>

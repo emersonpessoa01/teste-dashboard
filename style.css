@@ -56,12 +56,55 @@ html::-webkit-scrollbar-thumb:hover {
   padding-right: 6.75rem;
 }
 #sidebar {
-  /* overflow-y: auto; */
-  /* max-height: 100vh; */
+  overflow-y: auto;
+  max-height: 100vh;
 }
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    padding: 8px; /* Adiciona espaçamento */
+    position: relative;
+    align-items: flex-end; /* Alinha os itens ao fundo */
+  }
+
+  td:before {
+    content: attr(data-label); /* Exibe o nome da coluna como rótulo */
+    position: absolute;
+    top: 10px; /* Adiciona pequeno espaço do topo */
+    left: 10px;
+    font-weight: bold;
+  }
+}
+.custom-border {  
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);  
+}
+
 @media (max-width: 480px) {
   html{
-    font-size: 80.5%;
+    /* font-size: 80.5%; */
   }
 }
 
