@@ -61,7 +61,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 @media (max-width: 480px) {
   html{
-    font-size: 92.5%;
+    font-size: 80.5%;
   }
 }
 
