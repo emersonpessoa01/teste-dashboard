@@ -88,6 +88,7 @@ html::-webkit-scrollbar-thumb:hover {
     padding: 8px; /* Adiciona espaçamento */
     position: relative;
     align-items: flex-end; /* Alinha os itens ao fundo */
+    z-index: -1 !important;
   }
 
   td:before {
@@ -105,6 +106,10 @@ html::-webkit-scrollbar-thumb:hover {
 @media (max-width: 480px) {
   html{
     /* font-size: 80.5%; */
+  }
+  .box-enterprise,.box-btn{
+    width: 100%;
+    justify-content: center;
   }
 }
 
