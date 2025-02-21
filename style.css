@@ -54,6 +54,10 @@ html::-webkit-scrollbar-thumb:hover {
 .box-icon {
   padding-right: 6.75rem;
 }
+/* .fa-search {
+  position: absolute;
+  right: -13.25rem;
+} */
 #sidebar {
   overflow-y: auto;
   max-height: 100vh;
