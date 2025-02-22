@@ -200,17 +200,19 @@
             <!-- Coluna Principal -->
             <div class="flex-1">
               <div class="bg-white rounded-lg shadow p-6 h-full">
-                <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto">
+                <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto mb-[44px]">
                   <h2 class="text-xl">Resumo do seu perfil</h2>
                   <div class="flex flex-1 flex-col w-full justify-end sm:flex-row gap-2">
-                    <button class="px-8 py-1 bg-btn-gray text-white rounded text-sm ">Editar</button>
-                    <button class="px-8 py-1 bg-green-500 text-white rounded text-sm ">Salvar</button>
+                    <button class="px-8 py-1 bg-btn-gray text-white rounded text-sm hover:bg-gray-700 transition-colors duration-200">Editar</button>
+                    <button class="px-8 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors duration-200">
+                      Salvar
+                    </button>
                   </div>
                 </div>
 
-                <div class="flex items-center mb-6">
-                  <div class="relative w-16 h-16 bg-gray-200 rounded-full mr-4 flex items-center justify-center text-xs text-gray-600">
-                    ALTERAR FOTO
+                <div class="flex flex-col md:flex-row items-center mb-6 gap-8">
+                  <div class="w-[110px] h-[110px] bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">
+                    <img src="./image/avatar1.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover" />
                   </div>
                   <div>
                     <p class="text-lg font-semibold">Nome</p>
@@ -219,9 +221,9 @@
                 </div>
 
                 <div class="space-y-2 mb-6">
-                  <p><span class="text-gray-600">CPF/CNPJ:</span> XXX.XXX.XXX-XX</p>
-                  <p><span class="text-gray-600">E-mail:</span> seuemail@empresarial.com</p>
-                  <p><span class="text-gray-600">Telefone:</span> (XX) XXXXX - XXXX</p>
+                  <p class="break-all break-words"><span class="text-gray-600">CPF/CNPJ:</span> XXX.XXX.XXX-XX</p>
+                  <p class="break-all break-words"><span class="flex flex-wrap text-gray-600">E-mail:</span> seuemail@empresarial.com</p>
+                  <p class="break-all break-words"><span class="text-gray-600">Telefone:</span> (XX) XXXXX - XXXX</p>
                 </div>
 
                 <div class="space-y-3">
@@ -251,17 +253,28 @@
                   <!-- Coloque um label para cada input -->
                   <label class="block">
                     <span class="text-bold">Senha atual</span>
-                    <input type="password" placeholder="" class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    <input
+                      type="password"
+                      placeholder=""
+                      class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
                   /></label>
                   <label class="block">
-                    <span class="text-bold">Alterar senha</span><input type="password" placeholder="" class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    <span class="text-bold">Alterar senha</span
+                    ><input
+                      type="password"
+                      placeholder=""
+                      class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
                   /></label>
                   <label class="block">
-                    <span class="text-bold">Confirmar senha</span><input type="password" placeholder="" class="w-full mb-4 p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    <span class="text-bold">Confirmar senha</span
+                    ><input
+                      type="password"
+                      placeholder=""
+                      class="w-full mb-4 p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
                   /></label>
                 </div>
 
-                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px]">Salvar nova senha</button>
+                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px] hover:bg-green-600 transition-colors duration-200">Salvar nova senha</button>
               </div>
 
               <!-- Preferências e Configurações -->
@@ -272,7 +285,7 @@
                 <label class="block"><input type="checkbox" /> E-mail - Alertas importantes</label>
                 <label class="block"><input type="checkbox" /> Sistema - Notificações no painel</label>
                 <label class="block"><input type="checkbox" /> Push - Notificações no celular</label>
-                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px] mt-4">Salvar alterações</button>
+                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px] mt-4 hover:bg-green-600 transition-colors duration-200">Salvar alterações</button>
               </div>
             </div>
           </section>
