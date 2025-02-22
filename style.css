@@ -63,9 +63,14 @@ html::-webkit-scrollbar-thumb:hover {
   max-height: 100vh;
 }
 /* Table */
+
+
 table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background: #f5f5f5;
 }
+
+
+
 @media (max-width: 768px) {
   table thead {
     display: none;
