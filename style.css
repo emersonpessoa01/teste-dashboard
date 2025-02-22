@@ -6,6 +6,7 @@
   --light: #f3f4f6;
   --light-gray: #37404d;
   --gray: #67696c;
+  --text-gray:rgba(0,0,0,0.989);
 }
 
 * {
@@ -55,6 +56,9 @@ html::-webkit-scrollbar-thumb:hover {
 
 .text-primary {
   color: var(--primary);
+}
+.text-gray {
+  color: var(--text-gray);
 }
 .box-icon {
   padding-right: 6.75rem;
