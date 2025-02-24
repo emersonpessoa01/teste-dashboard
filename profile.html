@@ -199,72 +199,79 @@
           <section class="flex flex-col lg:flex-row gap-6">
             <!-- Coluna Principal -->
             <div class="flex-1">
-              <div class="bg-white rounded-lg shadow p-6 h-full">
-                <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto">
-                  <h2 class="text-xl text-gray">Resumo do seu perfil</h2>
-                  <div class="flex flex-1 flex-col w-full justify-end sm:flex-row gap-2">
-                    <button class="px-8 py-1 bg-btn-gray text-white rounded text-sm hover:bg-gray-700 transition-colors duration-200">Editar</button>
-                    <button class="px-8 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors duration-200">
-                      Salvar
-                    </button>
+              <div class="py-4 px-4 flex flex-wrap justify-between bg-white shadow-[4px_4px_6px_rgba(0,0,0,0.2)] rounded-[5px] md:flex-row">
+                <div class="bg-white rounded-lg p-6 h-full">
+                  <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto">
+                    <h2 class="text-xl text-gray">Resumo do seu perfil</h2>
+                    <div class="flex flex-1 flex-col w-full justify-end sm:flex-row gap-2">
+                      <button class="px-8 py-1 bg-btn-gray text-white rounded text-sm hover:bg-gray-700 transition-colors duration-200">
+                        Editar
+                      </button>
+                      <button class="px-8 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors duration-200">
+                        Salvar
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                <div class="flex flex-col md:flex-row items-center gap-8 my-[44px]">
-                  <div class="w-[110px] h-[110px] bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">
-                    <img src="./image/avatar1.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover" />
+                  <div class="flex flex-col md:flex-row items-center gap-8 my-[44px]">
+                    <div class="w-[110px] h-[110px] bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">
+                      <img src="./image/avatar1.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover" />
+                    </div>
+                    <div>
+                      <p class="text-lg font-semibold text-gray">Nome</p>
+                      <p class="text-xl text-gray-500">Administrador</p>
+                    </div>
                   </div>
-                  <div>
-                    <p class="text-lg font-semibold text-gray">Nome</p>
-                    <p class="text-xl text-gray-500">Administrador</p>
+
+                  <div class="space-y-2 pb-8 mb-8 border-b-[0.1px] border-solid" style="border-color: rgba(0, 0, 0, 0.2)">
+                    <p class="text-base break-all break-words text-gray-500"><span class="text-gray">CPF/CNPJ:</span> XXX.XXX.XXX-XX</p>
+                    <p class="text-base break-all break-words text-gray-500">
+                      <span class="text-gray w-full">E-mail:</span> seuemail@empresarial.com
+                    </p>
+                    <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Telefone:</span> (XX) XXXXX - XXXX</p>
                   </div>
-                </div>
 
-                <div class="space-y-2 pb-8 mb-8 border-b-[0.1px] border-solid" style="border-color: rgba(0, 0, 0, 0.2)">
-                  <p class="text-base break-all break-words text-gray-500"><span class="text-gray">CPF/CNPJ:</span> XXX.XXX.XXX-XX</p>
-                  <p class="text-base break-all break-words text-gray-500"><span class="text-gray w-full">E-mail:</span> seuemail@empresarial.com</p>
-                  <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Telefone:</span> (XX) XXXXX - XXXX</p>
-                </div>
+                  <div class="space-y-3">
+                    <h3 class="text-xl text-gray">Acessos</h3>
+                    <p class="text-base break-all break-words text-gray-500">
+                      <span class="text-gray">Nível de acesso:</span> Administrador (gerencia usuários e configurações)
+                    </p>
+                    <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Último acesso em:</span> 00 de mês de 0000</p>
 
-                <div class="space-y-3">
-                  <h3 class="text-xl text-gray">Acessos</h3>
-                  <p class="text-base break-all break-words text-gray-500">
-                    <span class="text-gray">Nível de acesso:</span> Administrador (gerencia usuários e configurações)
-                  </p>
-                  <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Último acesso em:</span> 00 de mês de 0000</p>
+                    <h3 class="text-base break-all break-words">Permissões Específicas:</h3>
 
-                  <h3 class="text-base break-all break-words">Permissões Específicas:</h3>
+                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
+                      <input type="checkbox" class="peer hidden" />
+                      <span
+                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                      ></span>
+                      <span>E-mail - Alertas importantes</span>
+                    </label>
 
-                  <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                    <input type="checkbox" class="peer hidden" />
-                    <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                    ></span>
-                    <span>E-mail - Alertas importantes</span>
-                  </label>
+                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
+                      <input type="checkbox" class="peer hidden" />
+                      <span
+                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                      ></span>
+                      <span>Sistema - Notificações no painel</span>
+                    </label>
 
-                  <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                    <input type="checkbox" class="peer hidden" />
-                    <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                    ></span>
-                    <span>Sistema - Notificações no painel</span>
-                  </label>
-
-                  <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                    <input type="checkbox" class="peer hidden" />
-                    <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                    ></span>
-                    <span>Push - Notificações no celular</span>
-                  </label>
+                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
+                      <input type="checkbox" class="peer hidden" />
+                      <span
+                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                      ></span>
+                      <span>Push - Notificações no celular</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
+
             <!-- Coluna Lateral -->
             <div class="flex-1 flex flex-col gap-6">
               <!-- Segurança da Conta -->
-              <div class="bg-white rounded shadow p-6 h-full">
+              <div class="bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-6 h-full">
                 <h2 class="text-xl font-bold mb-4">Segurança da conta</h2>
                 <p class="text-sm text-gray-600 mb-4">
                   Para garantir a segurança da sua senha, ela deve ter no mínimo 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra
@@ -272,27 +279,37 @@
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-16">
                   <!-- Coloque um label para cada input -->
-                  <label class="block">
+                  <label class="block relative">
                     <span class="text-bold">Senha atual</span>
                     <input
                       type="password"
                       placeholder=""
-                      class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
-                  /></label>
-                  <label class="block">
+                      class="w-full p-2 pr-10 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    /><button type="button" class="absolute right-3 top-8" title="Show Password">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </label>
+                  <label class="block relative">
                     <span class="text-bold">Alterar senha</span
                     ><input
                       type="password"
                       placeholder=""
-                      class="w-full p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
-                  /></label>
-                  <label class="block">
+                      class="w-full p-2 pr-10 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    />
+                    <button type="button" class="absolute right-3 top-8" title="Show Password">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </label>
+                  <label class="block relative">
                     <span class="text-bold">Confirmar senha</span
                     ><input
                       type="password"
                       placeholder=""
-                      class="w-full mb-4 p-1 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
-                  /></label>
+                      class="w-full mb-4 p-2 pr-10 border rounded focus:outline-none focus:ring-2 focus:ring-[#10b981] bg-gray-100"
+                    /><button type="button" class="absolute right-3 top-8" title="Show Password">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </label>
                 </div>
 
                 <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px] hover:bg-green-600 transition-colors duration-200">
@@ -301,7 +318,7 @@
               </div>
 
               <!-- Preferências e Configurações -->
-              <div class="bg-white rounded shadow p-6 h-full">
+              <div class="bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-6 h-full">
                 <h2 class="text-xl font-bold mb-4">Preferências e configurações</h2>
                 <p><strong>Idioma:</strong> Português</p>
                 <h3 class="mt-4 font-semibold">Notificações</h3>
