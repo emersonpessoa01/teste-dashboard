@@ -215,20 +215,20 @@
                   <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto">
                     <h2 class="text-xl text-gray">Resumo do seu perfil</h2>
                     <div class="flex flex-1 flex-col w-full justify-end sm:flex-row gap-2">
-                      <button class="px-8 py-1 bg-btn-gray text-white rounded text-sm hover:bg-gray-700 transition-colors duration-200">
+                      <button class="px-4 py-2 bg-btn-gray text-white rounded text-sm hover:bg-gray-700 transition-colors duration-200">
                         Editar
                       </button>
-                      <button class="px-8 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors duration-200">
+                      <button class="px-4 py-2 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors duration-200">
                         Salvar
                       </button>
                     </div>
                   </div>
 
-                  <div class="flex flex-col md:flex-row items-center gap-8 my-[44px]">
+                  <div class="flex flex-col md:flex-row items-center gap-3 md:gap-8 my-[44px]">
                     <div class="w-[110px] h-[110px] bg-gray-300 rounded-full cursor-pointer" onclick="toggleAvatar(this)">
                       <img src="./image/avatar1.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover" />
                     </div>
-                    <div>
+                    <div class="text-center md:text-left">
                       <p class="text-lg font-semibold text-gray">Nome</p>
                       <p class="text-xl text-gray-500">Administrador</p>
                     </div>
@@ -255,7 +255,7 @@
                       <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
                         <input type="checkbox" class="peer hidden" />
                         <span
-                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                          class="list w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
                         ></span>
                         <span class="text-sm md:text-base break-words">Criar, editar e excluir usuários</span>
                       </label>
@@ -263,7 +263,7 @@
                       <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
                         <input type="checkbox" class="peer hidden" />
                         <span
-                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                          class="list w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
                         ></span>
                         <span class="text-sm md:text-base break-words">Gerenciar empresas cadastradas</span>
                       </label>
@@ -271,7 +271,7 @@
                       <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
                         <input type="checkbox" class="peer hidden" />
                         <span
-                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                          class="list w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
                         ></span>
                         <span class="text-sm md:text-base break-words">Consultar registros no blockchain</span>
                       </label>
@@ -348,10 +348,11 @@
                   <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
                     <input type="checkbox" class="peer hidden" />
                     <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                      class="list w-5 h-5 min-w-5 min-h-5 flex-shrink-0 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
                     >
                       ✓
                     </span>
+
                     <i class="fas fa-envelope text-gray-500 text-lg"></i>
                     <span class="text-sm md:text-base break-words text-gray-700">E-mail – Receber alertas importantes e atualizações do sistema</span>
                   </label>
@@ -359,10 +360,11 @@
                   <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
                     <input type="checkbox" class="peer hidden" />
                     <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                      class="list w-5 h-5 min-w-5 min-h-5 flex-shrink-0 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
                     >
                       ✓
                     </span>
+
                     <i class="fas fa-desktop text-gray-500 text-lg"></i>
                     <span class="text-sm md:text-base break-words text-gray-700">Sistema – Exibir notificações dentro do painel administrativo</span>
                   </label>
@@ -370,10 +372,11 @@
                   <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
                     <input type="checkbox" class="peer hidden" />
                     <span
-                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                      class="list w-5 h-5 min-w-5 min-h-5 flex-shrink-0 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
                     >
                       ✓
                     </span>
+
                     <i class="fas fa-mobile-alt text-gray-500 text-lg"></i>
                     <span class="text-sm md:text-base break-words text-gray-700">Push – Notificações diretas no celular</span>
                   </label>

@@ -108,6 +108,10 @@ table tbody tr:nth-child(even) {
     text-align: left;
   }
 }
+
+.list{
+  margin: 0 !important;
+}
 @media (max-width: 480px) {
   table th,
   td {
