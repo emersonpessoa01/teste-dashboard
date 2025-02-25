@@ -6,7 +6,7 @@
   --light: #f3f4f6;
   --light-gray: #37404d;
   --gray: #67696c;
-  --text-gray:rgba(0,0,0,0.989);
+  --text-gray: rgba(0, 0, 0, 0.989);
 }
 
 * {
@@ -51,12 +51,16 @@ html::-webkit-scrollbar-thumb:hover {
   background: var(--sidebar);
 }
 .bg-btn-gray {
-  background: var(--gray)
+  background: var(--gray);
 }
 
 .text-primary {
   color: var(--primary);
 }
+.text-title {
+  color: var(--sidebar);
+}
+
 .text-gray {
   color: var(--text-gray);
 }
@@ -109,7 +113,7 @@ table tbody tr:nth-child(even) {
   }
 }
 
-.list{
+.list {
   margin: 0 !important;
 }
 @media (max-width: 480px) {

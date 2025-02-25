@@ -40,7 +40,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        let linkEmpresas = document.getElementById("link-empresas");
+        let linkEmpresas = document.getElementById("link-configuration");
         console.log(linkEmpresas.attributes.id.value);
         linkEmpresas.addEventListener("click", function (event) {
           event.preventDefault();
@@ -141,14 +141,17 @@
           <a
             href="./profile.html"
             class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
-            id="link-empresas"
           >
             <span class="mr-8"><img src="./image/company.png" alt="Company Icon" class="w-[23px]" /></span> Empresas
           </a>
           <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/report.png" alt="Report Icon" class="w-[23px]" /></span> Relatórios
           </a>
-          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a
+            href="#"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+            id="link-configuration"
+          >
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
@@ -204,12 +207,15 @@
             <span id="current-date" class="text-gray-500 font-medium w-full text-left lg:text-center lg:w-auto"></span>
           </div>
         </header>
-
+        <div class="content flex flex-col px-5 pt-5 pb-0 md:px-10 md:pt-10 md:space-x-6 md:flex-row">
+          <h1 class="text-2xl text-title">Dashboard</h1>
+        </div>
         <!-- Conteúdo Principal -->
         <div class="content flex-1 flex flex-col p-3 lg:p-10 space-y-3 lg:space-y-0 lg:space-x-6 lg:flex-row">
+          <!-- Coloca um títtulo -->
           <!-- Empresas Cadastradas -->
           <section class="flex-1 bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-3 md:p-6">
-            <h2 class="text-xl font-bold mb-6">Empresas cadastradas</h2>
+            <h2 class="text-xl mb-6">Empresas cadastradas</h2>
             <div class="flex flex-col lg:flex-row gap-3 w-full mb-3">
               <input
                 type="text"
