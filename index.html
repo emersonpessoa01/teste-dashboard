@@ -46,15 +46,11 @@
           event.preventDefault();
           window.location.href = "profile.html";
         });
-
+        
         let links = document.querySelectorAll(".sidebar-link");
 
-        // Define o primeiro link (Dashboard) como ativo por padrão
-        if (links.length > 0) {
-          links[0].classList.add("bg-[#10b981]", "text-white");
-        }
-
-        links.forEach((link) => {
+        // Define o primeiro link (Dashboard) como ativo apenas ao clicar
+        links.forEach((link, index) => {
           link.addEventListener("click", function (event) {
             event.preventDefault();
 
@@ -67,8 +63,14 @@
             // Atualiza o breadcrumb
             updateBreadcrumb(this.textContent.trim());
           });
+
+          // Se for o primeiro link, não adicionar as classes
+          if (index === 0) {
+            link.classList.remove("bg-[#10b981]", "text-white");
+          }
         });
       });
+
       //Adicionar data atual: dia da semana, dia do mês e mês
       function updateDate() {
         const dateElement = document.getElementById("current-date");
@@ -134,7 +136,10 @@
           </button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
-          <a class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a
+            id="link-dashboard"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+          >
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
 
@@ -155,6 +160,7 @@
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
+
         <div class="mt-auto min-h-0 h-auto">
           <a href="#" class="flex items-center text-primary hover:text-white transition duration-600 ease-in-out">
             <span class="mr-2"><img src="./image/Logout.png" alt="Logout Icon" class="w-[23px]" /></span> Log out
