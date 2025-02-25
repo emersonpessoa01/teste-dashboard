@@ -40,11 +40,18 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        const links = document.querySelectorAll(".sidebar-link");
+        let linkDashboard = document.getElementById("link-dashboard");
+        console.log(linkDashboard.attributes.id.value);
+        linkDashboard.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "index.html";
+        });
+
+        let links = document.querySelectorAll(".sidebar-link");
 
         // Define o primeiro link (Dashboard) como ativo por padrão
         if (links.length > 0) {
-          links[0].classList.add("bg-[#10b981]", "text-white");
+          links[1].classList.add("bg-[#10b981]", "text-white");
         }
 
         links.forEach((link) => {
@@ -67,6 +74,9 @@
         const dateElement = document.getElementById("current-date");
         const options = { weekday: "long", day: "2-digit", month: "long" };
         let currentDate = new Date().toLocaleDateString("pt-BR", options);
+
+        // Remove "feira" dos dias da semana
+        currentDate = currentDate.replace("-feira", "");
 
         // Deixa a primeira letra do dia da semana e do mês maiúsculas
         currentDate = currentDate.replace(/(^\w{1})|(\s\w{1})/g, (match) => match.toUpperCase());
@@ -125,8 +135,9 @@
         </div>
         <nav class="flex-1 space-y-2 h-auto">
           <a
-            href="/profile.html"
+            href="#"
             class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+            id="link-dashboard"
           >
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>

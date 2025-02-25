@@ -40,7 +40,14 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        const links = document.querySelectorAll(".sidebar-link");
+        let linkEmpresas = document.getElementById("link-empresas");
+        console.log(linkEmpresas.attributes.id.value);
+        linkEmpresas.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "profile.html";
+        });
+
+        let links = document.querySelectorAll(".sidebar-link");
 
         // Define o primeiro link (Dashboard) como ativo por padrão
         if (links.length > 0) {
@@ -127,13 +134,15 @@
           </button>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
-          <a
-            href="/profile.html"
-            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
-          >
+          <a class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
-          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+
+          <a
+            href="./profile.html"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+            id="link-empresas"
+          >
             <span class="mr-8"><img src="./image/company.png" alt="Company Icon" class="w-[23px]" /></span> Empresas
           </a>
           <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
@@ -199,7 +208,7 @@
         <!-- Conteúdo Principal -->
         <div class="content flex-1 flex flex-col p-3 lg:p-10 space-y-3 lg:space-y-0 lg:space-x-6 lg:flex-row">
           <!-- Empresas Cadastradas -->
-          <section class="flex-1 bg-white rounded shadow p-3 md:p-6">
+          <section class="flex-1 bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-3 md:p-6">
             <h2 class="text-xl font-bold mb-6">Empresas cadastradas</h2>
             <div class="flex flex-col lg:flex-row gap-3 w-full mb-3">
               <input
@@ -248,7 +257,7 @@
           </section>
 
           <!-- Detalhes da Empresa -->
-          <section class="flex-1 bg-white rounded shadow p-3 md:p-6">
+          <section class="flex-1 bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-3 md:p-6">
             <!-- Título -->
             <!-- <h2 class="text-xl font-bold mb-6">Detalhes</h2> -->
 
@@ -258,11 +267,7 @@
               <div class="flex flex-col md:flex-row items-center">
                 <!-- Avatar -->
                 <div class="w-16 h-16 bg-gray-300 rounded-full cursor-pointer flex-shrink-0 mr-4" onclick="toggleAvatar(this)">
-                  <img
-                    src="./image/avatar1.jpg"
-                    alt="Avatar"
-                    class="w-full h-full rounded-full object-cover"
-                  />
+                  <img src="./image/avatar1.jpg" alt="Avatar" class="w-full h-full rounded-full object-cover" />
                 </div>
                 <!-- Informações -->
                 <div>
