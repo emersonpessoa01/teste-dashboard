@@ -199,8 +199,8 @@
           <section class="flex flex-col lg:flex-row gap-6">
             <!-- Coluna Principal -->
             <div class="flex-1">
-              <div class="py-4 px-4 flex flex-wrap justify-between bg-white shadow-[4px_4px_6px_rgba(0,0,0,0.2)] rounded-[5px] md:flex-row">
-                <div class="bg-white rounded-lg p-6 h-full">
+              <div class="p-6 flex flex-wrap justify-between bg-white shadow-[4px_4px_6px_rgba(0,0,0,0.2)] rounded-[5px] md:flex-row h-full">
+                <div class="bg-white rounded-lg w-full h-full">
                   <div class="flex flex-wrap flex-col sm:flex-row justify-between mb-6 gap-2 w-auto">
                     <h2 class="text-xl text-gray">Resumo do seu perfil</h2>
                     <div class="flex flex-1 flex-col w-full justify-end sm:flex-row gap-2">
@@ -231,38 +231,40 @@
                     <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Telefone:</span> (XX) XXXXX - XXXX</p>
                   </div>
 
-                  <div class="space-y-3">
-                    <h3 class="text-xl text-gray">Acessos</h3>
-                    <p class="text-base break-all break-words text-gray-500">
-                      <span class="text-gray">Nível de acesso:</span> Administrador (gerencia usuários e configurações)
+                  <div class="space-y-4">
+                    <h3 class="text-xl text-gray-800">Acessos</h3>
+                    <p class="text-base text-gray-600">
+                      <span class="font-medium text-gray-800">Nível de acesso:</span> Administrador (gerencia usuários e configurações)
                     </p>
-                    <p class="text-base break-all break-words text-gray-500"><span class="text-gray">Último acesso em:</span> 00 de mês de 0000</p>
+                    <p class="text-base text-gray-600"><span class="font-medium text-gray-800">Último acesso em:</span> 00 de mês de 0000</p>
 
-                    <h3 class="text-base break-all break-words">Permissões Específicas:</h3>
+                    <h3 class="text-lg text-gray-800 mt-4">Permissões Específicas:</h3>
 
-                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                      <input type="checkbox" class="peer hidden" />
-                      <span
-                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                      ></span>
-                      <span>E-mail - Alertas importantes</span>
-                    </label>
+                    <div class="space-y-3">
+                      <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                        ></span>
+                        <span class="text-sm md:text-base break-words">Criar, editar e excluir usuários</span>
+                      </label>
 
-                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                      <input type="checkbox" class="peer hidden" />
-                      <span
-                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                      ></span>
-                      <span>Sistema - Notificações no painel</span>
-                    </label>
+                      <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                        ></span>
+                        <span class="text-sm md:text-base break-words">Gerenciar empresas cadastradas</span>
+                      </label>
 
-                    <label class="flex items-center space-x-2 text-gray-500 cursor-pointer">
-                      <input type="checkbox" class="peer hidden" />
-                      <span
-                        class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
-                      ></span>
-                      <span>Push - Notificações no celular</span>
-                    </label>
+                      <label class="flex items-center space-x-3 text-gray-700 cursor-pointer">
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white before:content-['✓'] before:hidden peer-checked:before:block"
+                        ></span>
+                        <span class="text-sm md:text-base break-words">Consultar registros no blockchain</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -318,14 +320,55 @@
               </div>
 
               <!-- Preferências e Configurações -->
-              <div class="bg-white rounded shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-6 h-full">
-                <h2 class="text-xl font-bold mb-4">Preferências e configurações</h2>
-                <p><strong>Idioma:</strong> Português</p>
-                <h3 class="mt-4 font-semibold">Notificações</h3>
-                <label class="block"><input type="checkbox" /> E-mail - Alertas importantes</label>
-                <label class="block"><input type="checkbox" /> Sistema - Notificações no painel</label>
-                <label class="block"><input type="checkbox" /> Push - Notificações no celular</label>
-                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-[221px] mt-4 hover:bg-green-600 transition-colors duration-200">
+              <div class="bg-white rounded-lg shadow-[4px_4px_6px_rgba(0,0,0,0.2)] p-6 h-full">
+                <div class="mb-4">
+                  <p class="font-medium text-gray-700">
+                    Idioma:
+                    <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-md text-sm">Português</span>
+                  </p>
+                </div>
+
+                <p class="text-base text-gray-600">
+                  <span class="font-medium text-gray-800">Notificações:</span> Escolha como deseja ser notificado sobre atualizações e atividades
+                  importantes.
+                </p>
+
+                <div class="space-y-3">
+                  <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
+                    <input type="checkbox" class="peer hidden" />
+                    <span
+                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                    >
+                      ✓
+                    </span>
+                    <i class="fas fa-envelope text-gray-500 text-lg"></i>
+                    <span class="text-sm md:text-base break-words text-gray-700">E-mail – Receber alertas importantes e atualizações do sistema</span>
+                  </label>
+
+                  <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
+                    <input type="checkbox" class="peer hidden" />
+                    <span
+                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                    >
+                      ✓
+                    </span>
+                    <i class="fas fa-desktop text-gray-500 text-lg"></i>
+                    <span class="text-sm md:text-base break-words text-gray-700">Sistema – Exibir notificações dentro do painel administrativo</span>
+                  </label>
+
+                  <label class="flex items-center space-x-3 text-gray-300 cursor-pointer">
+                    <input type="checkbox" class="peer hidden" />
+                    <span
+                      class="w-5 h-5 flex items-center justify-center border-2 border-gray-400 bg-gray-300 rounded-md peer-checked:bg-gray-500 peer-checked:border-gray-500 peer-checked:text-white"
+                    >
+                      ✓
+                    </span>
+                    <i class="fas fa-mobile-alt text-gray-500 text-lg"></i>
+                    <span class="text-sm md:text-base break-words text-gray-700">Push – Notificações diretas no celular</span>
+                  </label>
+                </div>
+
+                <button class="bg-green-500 text-white py-2 px-4 rounded w-full md:w-56 mt-4 hover:bg-green-600 transition-colors duration-200">
                   Salvar alterações
                 </button>
               </div>
