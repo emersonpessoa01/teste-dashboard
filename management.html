@@ -48,18 +48,30 @@
 
         let links = document.querySelectorAll(".sidebar-link");
 
+        // Recupera o link ativo do localStorage e aplica a classe
+        const activeLink = localStorage.getItem("activeLink");
+        if (activeLink) {
+          let savedLink = document.getElementById(activeLink);
+          if (savedLink) {
+            savedLink.classList.add("bg-[#10b981]", "text-white");
+          }
+        }
+
         links.forEach((link) => {
           link.addEventListener("click", function (event) {
             event.preventDefault();
 
-            // Remove a classe 'active' de todos os links
+            // Remove a classe ativa de todos os links
             links.forEach((l) => l.classList.remove("bg-[#10b981]", "text-white"));
 
-            // Adiciona a classe 'active' ao link clicado
+            // Adiciona a classe ao link clicado
             this.classList.add("bg-[#10b981]", "text-white");
 
             // Atualiza o breadcrumb
             updateBreadcrumb(this.textContent.trim());
+
+            // Salva o link ativo no localStorage
+            localStorage.setItem("activeLink", this.id);
 
             // Verifica se o ID do link está no objeto pageLinks e redireciona
             const targetPage = pageLinks[this.id];
@@ -136,7 +148,6 @@
             </button>
           </a>
         </div>
-
         <nav class="flex-1 space-y-2 h-auto">
           <a
             href=""
@@ -168,7 +179,6 @@
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
-
         <div class="mt-auto min-h-0 h-auto">
           <a href="#" class="flex items-center text-primary hover:text-white transition duration-600 ease-in-out">
             <span class="mr-2"><img src="./image/Logout.png" alt="Logout Icon" class="w-[23px]" /></span> Log out
@@ -195,7 +205,7 @@
               <span
                 id="breadcrumb-main"
                 class="text-gray-500 font-medium w-[120px] overflow-hidden text-ellipsis whitespace-nowrap text-left inline-block"
-                >Dashboard</span
+                >Empresas</span
               >
             </div>
             <!-- Título "Monitorando" -->
@@ -222,7 +232,7 @@
           </div>
         </header>
         <div class="content flex flex-col px-5 pt-5 pb-0 md:px-10 md:pt-10 md:space-x-6 md:flex-row">
-          <h1 class="text-2xl text-title">Dashboard</h1>
+          <h1 class="text-2xl text-title">Gerenciamento de empresas</h1>
         </div>
         <!-- Conteúdo Principal -->
         <div class="content flex-1 flex flex-col p-3 lg:p-10 space-y-3 lg:space-y-0 lg:space-x-6 lg:flex-row">

@@ -40,36 +40,49 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        let linkDashboard = document.getElementById("link-dashboard");
-        console.log(linkDashboard.attributes.id.value);
-        linkDashboard.addEventListener("click", function (event) {
-          event.preventDefault();
-          window.location.href = "index.html";
-        });
+        const pageLinks = {
+          "link-dashboard": "dashboard.html",
+          "link-management": "management.html",
+          "link-configuration": "configuration.html",
+        };
 
         let links = document.querySelectorAll(".sidebar-link");
 
-        // Define o primeiro link (Dashboard) como ativo por padrão
-        if (links.length > 0) {
-          links[3].classList.add("bg-[#10b981]", "text-white");
+        // Recupera o link ativo do localStorage e aplica a classe
+        const activeLink = localStorage.getItem("activeLink");
+        if (activeLink) {
+          let savedLink = document.getElementById(activeLink);
+          if (savedLink) {
+            savedLink.classList.add("bg-[#10b981]", "text-white");
+          }
         }
 
         links.forEach((link) => {
           link.addEventListener("click", function (event) {
             event.preventDefault();
 
-            // Remove a classe 'active' de todos os links
+            // Remove a classe ativa de todos os links
             links.forEach((l) => l.classList.remove("bg-[#10b981]", "text-white"));
 
-            // Adiciona a classe 'active' ao link clicado
+            // Adiciona a classe ao link clicado
             this.classList.add("bg-[#10b981]", "text-white");
 
             // Atualiza o breadcrumb
             updateBreadcrumb(this.textContent.trim());
+
+            // Salva o link ativo no localStorage
+            localStorage.setItem("activeLink", this.id);
+
+            // Verifica se o ID do link está no objeto pageLinks e redireciona
+            const targetPage = pageLinks[this.id];
+            if (targetPage) {
+              window.location.href = targetPage;
+            }
           });
         });
       });
-      //Adicionar data atual: dia da semana, dia do mês e mês
+
+      // Adicionar data atual: dia da semana, dia do mês e mês
       function updateDate() {
         const dateElement = document.getElementById("current-date");
         const options = { weekday: "long", day: "2-digit", month: "long" };
@@ -121,33 +134,48 @@
         class="w-64 bg-sidebar text-white flex flex-col px-6 py-8 fixed z-20 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out h-full"
       >
         <div class="mb-8 flex justify-between items-center min-h-0 h-auto">
-          <div class="flex items-center justify-center mr-2">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="mr-2">
-              <path d="M20 5L30 15L20 25L10 15L20 5Z" stroke="var(--secondary)" strokeWidth="2" />
-              <path d="M20 15L30 25L20 35L10 25L20 15Z" stroke="var(--primary)" strokeWidth="2" />
-            </svg>
-            <span className="text-2xl md:text-2xl font-black">SecureFlow</span>
-          </div>
-          <!-- Botão de fechar no modo tablet -->
-          <button class="text-white md:hidden text-xl" onclick="toggleSidebar()" title="Close Sidebar">
-            <i class="fa fa-times" aria-hidden="true"></i>
-          </button>
+          <a href="index.html" class="flex items-center justify-center mr-2">
+            <div class="flex items-center justify-center mr-2">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="mr-2">
+                <path d="M20 5L30 15L20 25L10 15L20 5Z" stroke="var(--secondary)" strokeWidth="2" />
+                <path d="M20 15L30 25L20 35L10 25L20 15Z" stroke="var(--primary)" strokeWidth="2" />
+              </svg>
+              <span className="text-2xl md:text-2xl font-black">SecureFlow</span>
+            </div>
+            <!-- Botão de fechar no modo tablet -->
+            <button class="text-white md:hidden text-xl" onclick="toggleSidebar()" title="Close Sidebar">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </a>
         </div>
         <nav class="flex-1 space-y-2 h-auto">
           <a
-            href="#"
-            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+            href=""
             id="link-dashboard"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
           >
             <span class="mr-8"><img src="./image/dash.png" alt="Dashboard Icon" class="w-[23px]" /></span> Dashboard
           </a>
-          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+
+          <a
+            href=""
+            id="link-management"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+          >
             <span class="mr-8"><img src="./image/company.png" alt="Company Icon" class="w-[23px]" /></span> Empresas
           </a>
-          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a
+            href="#"
+            id="link-report"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+          >
             <span class="mr-8"><img src="./image/report.png" alt="Report Icon" class="w-[23px]" /></span> Relatórios
           </a>
-          <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600">
+          <a
+            href="#"
+            id="link-configuration"
+            class="sidebar-link flex items-center p-3 rounded-lg text-primary hover:bg-[#10b981] hover:text-white transition duration-600"
+          >
             <span class="mr-8"><img src="./image/settings.png" alt="Settings Icon" class="w-[23px]" /></span> Configurações
           </a>
         </nav>
@@ -203,6 +231,9 @@
             <span id="current-date" class="text-gray-500 font-medium w-full text-left lg:text-center lg:w-auto"></span>
           </div>
         </header>
+        <div class="content flex flex-col px-5 pt-5 pb-0 md:px-10 md:pt-10 md:space-x-6 md:flex-row">
+          <h1 class="text-2xl text-title">Perfil</h1>
+        </div>
 
         <!-- Conteúdo Principal -->
         <div class="content flex-1 flex justify-center flex-col p-3 lg:p-10 space-y-3 lg:space-y-0 lg:space-x-6 lg:flex-row">

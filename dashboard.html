@@ -48,18 +48,30 @@
 
         let links = document.querySelectorAll(".sidebar-link");
 
+        // Recupera o link ativo do localStorage e aplica a classe
+        const activeLink = localStorage.getItem("activeLink");
+        if (activeLink) {
+          let savedLink = document.getElementById(activeLink);
+          if (savedLink) {
+            savedLink.classList.add("bg-[#10b981]", "text-white");
+          }
+        }
+
         links.forEach((link) => {
           link.addEventListener("click", function (event) {
             event.preventDefault();
 
-            // Remove a classe 'active' de todos os links
+            // Remove a classe ativa de todos os links
             links.forEach((l) => l.classList.remove("bg-[#10b981]", "text-white"));
 
-            // Adiciona a classe 'active' ao link clicado
+            // Adiciona a classe ao link clicado
             this.classList.add("bg-[#10b981]", "text-white");
 
             // Atualiza o breadcrumb
             updateBreadcrumb(this.textContent.trim());
+
+            // Salva o link ativo no localStorage
+            localStorage.setItem("activeLink", this.id);
 
             // Verifica se o ID do link está no objeto pageLinks e redireciona
             const targetPage = pageLinks[this.id];
@@ -136,7 +148,6 @@
             </button>
           </a>
         </div>
-
         <nav class="flex-1 space-y-2 h-auto">
           <a
             href=""
